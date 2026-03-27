@@ -1,0 +1,14 @@
+{
+  "name": "Visant Exporter",
+  "id": "figma-to-illustrator-99-dev",
+  "api": "1.0.0",
+  "main": "plugin-dist/code.js",
+  "ui": "plugin-dist/ui.html",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["http://localhost:3000"],
+    "reasoning": "Localhost is used for development purposes to provide Hot Module Replacement and live preview of the plugin UI."
+  }
+}

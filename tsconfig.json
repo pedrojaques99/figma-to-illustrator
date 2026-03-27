@@ -14,6 +14,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "allowJs": true,
+    "types": ["@figma/plugin-typings"],
     "jsx": "react-jsx",
     "paths": {
       "@/*": [

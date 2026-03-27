@@ -1,57 +1,80 @@
 @import "tailwindcss";
 
-@theme {
-  --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
-  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+:root {
+  /* Figma Standard Light Colors */
+  --figma-bg: #F5F5F7;
+  --figma-text: #333333;
+  --figma-blue: #18A0FB;
+  --figma-border: #E6E6E6;
+  --figma-secondary: #B3B3B3;
+  --figma-active: #000000;
 }
 
-:root {
-  --bg: #E4E3E0;
-  --ink: #141414;
-  --line: #141414;
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-sans);
+  background-color: var(--figma-bg);
+  color: var(--figma-text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.data-row {
-  display: grid;
-  grid-template-columns: 40px 1.5fr 1fr 1fr;
-  padding: 1rem;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.2s ease, color 0.2s ease;
-  cursor: pointer;
-}
-
-.data-row:hover {
-  background: var(--ink);
-  color: var(--bg);
-}
-
-.col-header {
-  font-family: 'Georgia', serif;
-  font-style: italic;
+.button-primary {
+  background-color: var(--figma-blue);
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
   font-size: 11px;
-  opacity: 0.5;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  padding: 8px 16px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.1s linear;
+  cursor: pointer;
+  border: none;
 }
 
-.data-value {
-  font-family: var(--font-mono);
-  letter-spacing: -0.02em;
+.button-primary:hover {
+  opacity: 0.8;
 }
 
-.code-block {
-  background: #1e1e1e;
-  color: #d4d4d4;
-  padding: 1.5rem;
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  line-height: 1.6;
-  overflow-x: auto;
+.button-primary:active {
+  opacity: 0.6;
+}
+
+.button-primary:disabled {
+  background-color: var(--figma-secondary);
+  cursor: not-allowed;
+}
+
+.card {
+  border: 1px solid var(--figma-border);
+  border-radius: 2px;
+  background: #F5F5F5;
+  padding: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
