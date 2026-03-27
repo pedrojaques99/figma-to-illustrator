@@ -1,0 +1,5 @@
+{
+  "name": "Figma Plugin Architect",
+  "description": "A professional tool to generate, configure, and download custom Figma plugins for high-res PNG and SVG exports.",
+  "requestFramePermissions": []
+}
