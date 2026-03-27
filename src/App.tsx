@@ -6,6 +6,9 @@ import JSZip from "jszip";
 // Architect Exporter - V2.5
 // Enhanced: Rich terminal feedback and progress tracking.
 
+const isLocal = window.location.hostname === "localhost";
+const PLUGIN_ID = isLocal ? "*" : "1619447879001265326";
+
 interface LogEntry {
   id: string;
   message: string;
@@ -140,7 +143,7 @@ export default function App() {
     window.addEventListener('message', handleMessage);
     parent.postMessage({ 
       pluginMessage: { type: 'request-initial-selection' }, 
-      pluginId: "figma-to-illustrator-99-dev" 
+      pluginId: PLUGIN_ID 
     }, '*');
 
     return () => window.removeEventListener('message', handleMessage);
@@ -156,7 +159,8 @@ export default function App() {
         const { height } = entry.contentRect;
         // Add a tiny bit of padding to avoid scrollbars
         parent.postMessage({ 
-          pluginMessage: { type: 'resize', height: Math.ceil(height) + 4, width: 320 } 
+          pluginMessage: { type: 'resize', height: Math.ceil(height) + 4, width: 320 },
+          pluginId: PLUGIN_ID
         }, '*');
       }
     });
@@ -183,7 +187,7 @@ export default function App() {
         type: 'run-export',
         config: config 
       },
-      pluginId: "figma-to-illustrator-99-dev"
+      pluginId: PLUGIN_ID
     }, '*');
   };
 

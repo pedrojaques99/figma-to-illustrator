@@ -1,6 +1,7 @@
 {
   "name": "Visant Exporter",
-  "id": "figma-to-illustrator-99-dev",
+  "id": "1619447879001265326",
+  "documentAccess": "dynamic-page",
   "api": "1.0.0",
   "main": "plugin-dist/code.js",
   "ui": "plugin-dist/ui.html",
