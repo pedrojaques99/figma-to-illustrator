@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Play, CheckCircle2, Figma, MousePointer2, Layers, Terminal as TerminalIcon, Info, AlertTriangle } from "lucide-react";
+import { Play, CheckCircle2, Figma, MousePointer2, Layers, Terminal as TerminalIcon, Info, AlertTriangle, Github, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import JSZip from "jszip";
 
@@ -210,7 +210,7 @@ export default function App() {
         <header className="text-center space-y-2">
           <div className="space-y-0.5">
             <h1 className="text-[10px] font-black uppercase tracking-[0.4em] opacity-30">Visant Exporter</h1>
-            <p className="text-[7px] font-bold uppercase tracking-[0.2em] opacity-10">by Visant Studios</p>
+            <p className="text-[7px] font-bold uppercase tracking-[0.2em] opacity-10 text-blue-500">by Pedro Jaques</p>
           </div>
           <div className="h-4">
              <AnimatePresence mode="wait">
@@ -389,12 +389,36 @@ export default function App() {
           )}
         </AnimatePresence>
         
-        <div className="mt-4 text-center">
+        <div className="mt-4 flex flex-col items-center gap-3">
           <p className="text-[9px] opacity-20 uppercase tracking-[0.2em] font-black">
             {status === "idle" && selection.hasFrame && "Ready to sync"}
             {status === "running" && "Encoding..."}
             {status === "success" && "Assets delivered"}
           </p>
+          
+          <div className="flex items-center gap-4 pt-2 border-t border-black/[0.03] w-full justify-center">
+            <a 
+              href="https://github.com/pedrojaques99/figma-to-illustrator" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-1.5 opacity-20 hover:opacity-100 transition-all duration-300"
+            >
+              <Github size={10} className="group-hover:scale-110 transition-transform" />
+              <span className="text-[8px] font-black uppercase tracking-widest">OSS Plugin</span>
+            </a>
+            
+            <div className="w-1 h-1 rounded-full bg-black/5" />
+            
+            <a 
+              href="https://pedrojaques.com.br/donate" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-1.5 text-blue-500/30 hover:text-blue-500 transition-all duration-300"
+            >
+              <Heart size={10} fill="currentColor" className="opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+              <span className="text-[8px] font-black uppercase tracking-widest">Donate</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
